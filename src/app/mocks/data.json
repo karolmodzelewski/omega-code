@@ -1,38 +1,115 @@
 {
-    "orders": {
-        "customer": {
-            "name": "Jan",
-            "surname": "Nowak",
-            "city": "Warsaw",
-            "postalCode": "11-121",
-            "street": "Warszawska",
-            "houseNumber": "23",
-            "flatNumber": "15b"
+    "orders": [
+        {
+            "customer": {
+                "name": "Jan",
+                "surname": "Nowak",
+                "city": "Warsaw",
+                "postalCode": "11-121",
+                "street": "Warszawska",
+                "houseNumber": "23",
+                "flatNumber": "15b"
+            },
+            "order": [
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "Large",
+                    "type": "Normal",
+                    "amount": 2
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "Medium",
+                    "type": "Smoked",
+                    "amount": 3
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "Small",
+                    "type": "Smoked",
+                    "amount": 1
+                },
+                {
+                    "name": "Coca-Cola",
+                    "amount": 2
+                }
+            ],
+            "totalAmount": 6,
+            "price": 222
         },
-        "order": [
-            {
-                "name": "Oscypek od Bacy",
-                "size": "Large",
-                "type": "Normal",
-                "amount": 2
+        {
+            "customer": {
+                "name": "Jan",
+                "surname": "Kowalski",
+                "city": "Szczecin",
+                "postalCode": "11-121",
+                "street": "Warszawska",
+                "houseNumber": "23",
+                "flatNumber": "15b"
             },
-            {
-                "name": "Oscypek od Bacy",
-                "size": "Medium",
-                "type": "Smoked",
-                "amount": 3
+            "order": [
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "Large",
+                    "type": "Normal",
+                    "amount": 2
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "Medium",
+                    "type": "Smoked",
+                    "amount": 3
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "Small",
+                    "type": "Smoked",
+                    "amount": 1
+                },
+                {
+                    "name": "Coca-Cola",
+                    "amount": 1
+                }
+            ],
+            "totalAmount": 5,
+            "price": 222
+        },
+        {
+            "customer": {
+                "name": "Jan",
+                "surname": "Naj",
+                "city": "Białystok",
+                "postalCode": "11-121",
+                "street": "Warszawska",
+                "houseNumber": "23",
+                "flatNumber": "15b"
             },
-            {
-                "name": "Oscypek od Bacy",
-                "size": "Small",
-                "type": "Smoked",
-                "amount": 1
-            },
-            {
-                "name": "Coca-Cola",
-                "amount": 2
-            }
-        ],
-        "price": 222
-    }
+            "order": [
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "Large",
+                    "type": "Normal",
+                    "amount": 5
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "Medium",
+                    "type": "Smoked",
+                    "amount": 3
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "Small",
+                    "type": "Smoked",
+                    "amount": 1
+                },
+                {
+                    "name": "Coca-Cola",
+                    "amount": 2
+                }
+            ],
+            "totalAmount": 9,
+            "price": 222
+        }
+    ]
 }

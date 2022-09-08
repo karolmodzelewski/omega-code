@@ -9,6 +9,8 @@ import { ShepherdsViewRoutingModule } from './shepherds-view-routing.module';
 import { FiltersComponent } from './components/filters/filters.component';
 import { ListOfOrdersComponent } from './components/list-of-orders/list-of-orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { LoadingStateComponent } from 'src/app/components/loading-state/loading-state.component';
+import { ErrorStateComponent } from 'src/app/components/error-state/error-state.component';
 
 @NgModule({
     declarations: [
@@ -23,6 +25,8 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
         MatButtonModule,
         MatIconModule,
         MatTableModule,
+        LoadingStateComponent,
+        ErrorStateComponent,
     ]
 })
 export class ShepherdsViewModule { }
