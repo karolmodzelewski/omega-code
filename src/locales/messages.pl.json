@@ -1,4 +1,7 @@
 {
   "locale": "pl",
-  "translations": {}
+  "translations": {
+    "3669409085996211817": " Client's view ",
+    "5880204964336469579": " Shepherd's view "
+  }
 }
