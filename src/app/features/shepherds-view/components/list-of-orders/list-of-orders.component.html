@@ -25,3 +25,5 @@
     <mat-row *matRowDef="let row; columns: displayedColumns" mat-row></mat-row>
 </mat-table>
 
+<omega-loading-state *ngIf="viewState === ViewState.LOADING"></omega-loading-state>
+<omega-error-state *ngIf="viewState === ViewState.ERROR"></omega-error-state>
