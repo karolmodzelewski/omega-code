@@ -1,0 +1,38 @@
+{
+    "orders": {
+        "customer": {
+            "name": "Jan",
+            "surname": "Nowak",
+            "city": "Warsaw",
+            "postalCode": "11-121",
+            "street": "Warszawska",
+            "houseNumber": "23",
+            "flatNumber": "15b"
+        },
+        "order": [
+            {
+                "name": "Oscypek od Bacy",
+                "size": "Large",
+                "type": "Normal",
+                "amount": 2
+            },
+            {
+                "name": "Oscypek od Bacy",
+                "size": "Medium",
+                "type": "Smoked",
+                "amount": 3
+            },
+            {
+                "name": "Oscypek od Bacy",
+                "size": "Small",
+                "type": "Smoked",
+                "amount": 1
+            },
+            {
+                "name": "Coca-Cola",
+                "amount": 2
+            }
+        ],
+        "price": 222
+    }
+}
