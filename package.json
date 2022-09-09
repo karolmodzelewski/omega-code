@@ -11,7 +11,8 @@
         "test": "ng test",
         "i18n:extract": "ng extract-i18n --output-path src/locales --format=json",
         "lint": "ng lint",
-        "lint:fix": "ng lint --fix"
+        "lint:fix": "ng lint --fix",
+        "mock:server": "json-server src/app/mocks/data.json --routes src/app/mocks/routes.json --no-cors=true --watch"
     },
     "private": true,
     "dependencies": {
@@ -44,6 +45,7 @@
         "@typescript-eslint/parser": "5.36.2",
         "eslint": "^8.23.0",
         "jasmine-core": "^4.4.0",
+        "json-server": "^0.17.0",
         "karma": "~6.4.0",
         "karma-chrome-launcher": "~3.1.0",
         "karma-coverage": "~2.2.0",

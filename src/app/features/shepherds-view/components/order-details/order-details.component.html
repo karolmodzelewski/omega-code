@@ -1,0 +1,48 @@
+<header class="header">
+    <mat-icon (click)="closePopup()" class="icon-close" fontIcon="close"></mat-icon>
+</header>
+
+<h1 class="popup-heading" mat-dialog-title i18n>Order details:</h1>
+
+<main class="main">
+    <div mat-dialog-content>
+        <section class="section">
+            <h3 class="section-heading" i18n>Customer details:</h3>
+            <p class="paragraph">
+                <span class="details-name" i18n>Full name:</span> {{ clientsOrder.customer.name }} {{ clientsOrder.customer.surname }}
+            </p>
+            <p class="paragraph">
+                <span class="details-name" i18n>City:</span> {{ clientsOrder.customer.city }}
+            </p>
+            <p class="paragraph">
+                <span class="details-name" i18n>Address:</span> {{ clientsOrder.customer.street }} {{ clientsOrder.customer.houseNumber }} {{ clientsOrder.customer?.flatNumber }}
+            </p>
+            <p class="paragraph">
+                <span class="details-name" i18n>Postal code:</span> {{ clientsOrder.customer.postalCode }}
+            </p>
+        </section>
+        <section class="section">
+            <h3 class="section-heading" i18n>Ordered products:</h3>
+            <div *ngFor="let order of clientsOrder.order" class="specific-order">
+                <p class="paragraph">
+                    <span class="details-name" i18n>Name:</span> {{ order.name }}
+                </p>
+                <p *ngIf="order.size" class="paragraph">
+                    <span class="details-name" i18n>Size:</span> {{ order.size }}
+                </p>
+                <p *ngIf="order.type" class="paragraph">
+                    <span class="details-name" i18n>Type:</span> {{ order.type }}
+                </p>
+                <p class="paragraph">
+                    <span class="details-name" i18n>Amount:</span> {{ order.amount }}
+                </p>
+                <p class="paragraph">
+                    <span class="details-name" i18n>Price:</span> {{ order.price }} zł
+                </p>
+            </div>
+        </section>
+        <section class="section">
+            <p class="total-price" i18n>Total price: {{ clientsOrder.totalPrice }} zł</p>
+        </section>
+    </div>
+</main>

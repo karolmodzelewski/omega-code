@@ -1,0 +1,127 @@
+{
+    "orders": [
+        {
+            "customer": {
+                "name": "Jan",
+                "surname": "Nowak",
+                "city": "Warsaw",
+                "postalCode": "11-121",
+                "street": "Warszawska",
+                "houseNumber": "23",
+                "flatNumber": "15b"
+            },
+            "order": [
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "LARGE",
+                    "type": "NORMAL",
+                    "amount": 2,
+                    "price": 12
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "LARGE",
+                    "type": "NORMAL",
+                    "amount": 3,
+                    "price": 10
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "LARGE",
+                    "type": "NORMAL",
+                    "amount": 1,
+                    "price": 1
+                },
+                {
+                    "name": "Coca-Cola",
+                    "amount": 2,
+                    "price": 13
+                }
+            ],
+            "totalAmount": 6,
+            "totalPrice": 222
+        },
+        {
+            "customer": {
+                "name": "Jan",
+                "surname": "Kowalski",
+                "city": "Szczecin",
+                "postalCode": "11-121",
+                "street": "Warszawska",
+                "houseNumber": "23",
+                "flatNumber": "15b"
+            },
+            "order": [
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "LARGE",
+                    "type": "NORMAL",
+                    "amount": 2,
+                    "price": 8
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "MEDIUM",
+                    "type": "NORMAL",
+                    "amount": 3,
+                    "price": 5
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "SMALL",
+                    "type": "SMOKED",
+                    "amount": 1,
+                    "price": 11
+                },
+                {
+                    "name": "Coca-Cola",
+                    "amount": 1,
+                    "price": 2
+                }
+            ],
+            "totalAmount": 5,
+            "totalPrice": 222
+        },
+        {
+            "customer": {
+                "name": "Jan",
+                "surname": "Naj",
+                "city": "Białystok",
+                "postalCode": "11-121",
+                "street": "Warszawska",
+                "houseNumber": "23",
+                "flatNumber": "15b"
+            },
+            "order": [
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "LARGE",
+                    "type": "NORMAL",
+                    "amount": 5,
+                    "price": 1
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "MEDIUM",
+                    "type": "SMOKED",
+                    "amount": 3,
+                    "price": 6
+                },
+                {
+                    "name": "Oscypek od Bacy",
+                    "size": "SMALL",
+                    "type": "SMOKED",
+                    "amount": 1,
+                    "price": 3
+                },
+                {
+                    "name": "Coca-Cola",
+                    "amount": 2,
+                    "price": 5
+                }
+            ],
+            "totalAmount": 9,
+            "totalPrice": 222
+        }
+    ]
+}

@@ -77,6 +77,9 @@
         },
         "serve": {
             "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "proxyConfig": "src/app/mocks/proxy.json"
+            },
             "configurations": {
             "production": {
                 "browserTarget": "omega-code:build:production"
