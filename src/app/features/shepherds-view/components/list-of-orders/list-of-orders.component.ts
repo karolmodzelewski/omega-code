@@ -63,7 +63,7 @@ export class ListOfOrdersComponent extends Destroyable implements OnInit {
             let result: boolean = true;
 
             if (orderFilters?.city) {
-                result = result && orders.customer.city.toLowerCase().includes(orderFilters?.city);
+                result = result && orders.customer.city.toLowerCase().includes(orderFilters?.city.toLowerCase());
             }
 
             if (orderFilters?.oscypekType) {
