@@ -6,6 +6,10 @@
     overflow: auto;
 }
 
+.mat-header-row, .no-data-container {
+    border-bottom: 1px solid $color-gray;
+}
+
 .mat-header-cell, .mat-cell {
     min-width: 120px;
     vertical-align: middle;
@@ -24,4 +28,24 @@
 .mat-column-amount,
 .mat-column-details {
     flex: none;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+}
+
+.no-data-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-white;
+    padding: 24px;
+}
+
+.no-data-found {
+    font-size: 16px;
+    margin: 0;
 }

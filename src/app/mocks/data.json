@@ -13,22 +13,22 @@
             "order": [
                 {
                     "name": "Oscypek od Bacy",
-                    "size": "Large",
-                    "type": "Normal",
+                    "size": "LARGE",
+                    "type": "NORMAL",
                     "amount": 2,
                     "price": 12
                 },
                 {
                     "name": "Oscypek od Bacy",
-                    "size": "Medium",
-                    "type": "Smoked",
+                    "size": "LARGE",
+                    "type": "NORMAL",
                     "amount": 3,
                     "price": 10
                 },
                 {
                     "name": "Oscypek od Bacy",
-                    "size": "Small",
-                    "type": "Smoked",
+                    "size": "LARGE",
+                    "type": "NORMAL",
                     "amount": 1,
                     "price": 1
                 },
@@ -54,22 +54,22 @@
             "order": [
                 {
                     "name": "Oscypek od Bacy",
-                    "size": "Large",
-                    "type": "Normal",
+                    "size": "LARGE",
+                    "type": "NORMAL",
                     "amount": 2,
                     "price": 8
                 },
                 {
                     "name": "Oscypek od Bacy",
-                    "size": "Medium",
-                    "type": "Smoked",
+                    "size": "MEDIUM",
+                    "type": "NORMAL",
                     "amount": 3,
                     "price": 5
                 },
                 {
                     "name": "Oscypek od Bacy",
-                    "size": "Small",
-                    "type": "Smoked",
+                    "size": "SMALL",
+                    "type": "SMOKED",
                     "amount": 1,
                     "price": 11
                 },
@@ -95,22 +95,22 @@
             "order": [
                 {
                     "name": "Oscypek od Bacy",
-                    "size": "Large",
-                    "type": "Normal",
+                    "size": "LARGE",
+                    "type": "NORMAL",
                     "amount": 5,
                     "price": 1
                 },
                 {
                     "name": "Oscypek od Bacy",
-                    "size": "Medium",
-                    "type": "Smoked",
+                    "size": "MEDIUM",
+                    "type": "SMOKED",
                     "amount": 3,
                     "price": 6
                 },
                 {
                     "name": "Oscypek od Bacy",
-                    "size": "Small",
-                    "type": "Smoked",
+                    "size": "SMALL",
+                    "type": "SMOKED",
                     "amount": 1,
                     "price": 3
                 },

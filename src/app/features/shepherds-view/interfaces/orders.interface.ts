@@ -1,3 +1,5 @@
+import { Order } from './order.interface';
+
 export interface Orders {
     customer: Customer;
     order: Order[];
@@ -13,12 +15,4 @@ interface Customer {
     street: string;
     houseNumber: string;
     flatNumber: string;
-}
-
-interface Order {
-    name: string;
-    amount: number;
-    price: number;
-    size?: string;
-    type?: string;
 }
