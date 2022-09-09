@@ -12,7 +12,7 @@ export class DashboardComponent {
     constructor(private router: Router) { }
 
     public navigateToClientsView(): void {
-        // TODO
+        this.router.navigate([Route.CLIENTS_VIEW]);
     }
 
     public navigateToShepherdsView(): void {

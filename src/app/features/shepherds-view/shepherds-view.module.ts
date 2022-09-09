@@ -16,6 +16,7 @@ import { ListOfOrdersComponent } from './components/list-of-orders/list-of-order
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { LoadingStateComponent } from 'src/app/components/loading-state/loading-state.component';
 import { ErrorStateComponent } from 'src/app/components/error-state/error-state.component';
+import { BackToDashboardButtonComponent } from 'src/app/components/back-to-dashboard-button/back-to-dashboard-button.component';
 
 @NgModule({
     declarations: [
@@ -37,6 +38,7 @@ import { ErrorStateComponent } from 'src/app/components/error-state/error-state.
         MatSelectModule,
         LoadingStateComponent,
         ErrorStateComponent,
+        BackToDashboardButtonComponent,
     ]
 })
 export class ShepherdsViewModule { }
