@@ -15,27 +15,31 @@
                     "name": "Oscypek od Bacy",
                     "size": "Large",
                     "type": "Normal",
-                    "amount": 2
+                    "amount": 2,
+                    "price": 12
                 },
                 {
                     "name": "Oscypek od Bacy",
                     "size": "Medium",
                     "type": "Smoked",
-                    "amount": 3
+                    "amount": 3,
+                    "price": 10
                 },
                 {
                     "name": "Oscypek od Bacy",
                     "size": "Small",
                     "type": "Smoked",
-                    "amount": 1
+                    "amount": 1,
+                    "price": 1
                 },
                 {
                     "name": "Coca-Cola",
-                    "amount": 2
+                    "amount": 2,
+                    "price": 13
                 }
             ],
             "totalAmount": 6,
-            "price": 222
+            "totalPrice": 222
         },
         {
             "customer": {
@@ -52,27 +56,31 @@
                     "name": "Oscypek od Bacy",
                     "size": "Large",
                     "type": "Normal",
-                    "amount": 2
+                    "amount": 2,
+                    "price": 8
                 },
                 {
                     "name": "Oscypek od Bacy",
                     "size": "Medium",
                     "type": "Smoked",
-                    "amount": 3
+                    "amount": 3,
+                    "price": 5
                 },
                 {
                     "name": "Oscypek od Bacy",
                     "size": "Small",
                     "type": "Smoked",
-                    "amount": 1
+                    "amount": 1,
+                    "price": 11
                 },
                 {
                     "name": "Coca-Cola",
-                    "amount": 1
+                    "amount": 1,
+                    "price": 2
                 }
             ],
             "totalAmount": 5,
-            "price": 222
+            "totalPrice": 222
         },
         {
             "customer": {
@@ -89,27 +97,31 @@
                     "name": "Oscypek od Bacy",
                     "size": "Large",
                     "type": "Normal",
-                    "amount": 5
+                    "amount": 5,
+                    "price": 1
                 },
                 {
                     "name": "Oscypek od Bacy",
                     "size": "Medium",
                     "type": "Smoked",
-                    "amount": 3
+                    "amount": 3,
+                    "price": 6
                 },
                 {
                     "name": "Oscypek od Bacy",
                     "size": "Small",
                     "type": "Smoked",
-                    "amount": 1
+                    "amount": 1,
+                    "price": 3
                 },
                 {
                     "name": "Coca-Cola",
-                    "amount": 2
+                    "amount": 2,
+                    "price": 5
                 }
             ],
             "totalAmount": 9,
-            "price": 222
+            "totalPrice": 222
         }
     ]
 }

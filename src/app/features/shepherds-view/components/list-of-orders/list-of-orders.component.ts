@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 import { catchError, EMPTY, takeUntil } from 'rxjs';
 
 import { Destroyable } from '../../../../utils/destroyable.util';
 import { DisplayedColumn } from './enums/displayed-column.enum';
 import { ViewState } from '../../../../enums/view-state.enum';
-import { Orders } from './interfaces/orders.interface';
+import { Orders } from '../../interfaces/orders.interface';
+import { OrderDetailsComponent } from '../order-details/order-details.component';
 
 @Component({
     selector: 'omega-list-of-orders',
@@ -20,12 +22,19 @@ export class ListOfOrdersComponent extends Destroyable implements OnInit {
     public ViewState: typeof ViewState = ViewState;
     public viewState: ViewState = ViewState.LOADING;
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient, private dialog: MatDialog) {
         super();
     }
 
     public ngOnInit(): void {
         this.getOrders();
+    }
+
+    public showOrderDetails(order: Orders): void {
+        this.dialog.open(OrderDetailsComponent, {
+            panelClass: 'order-details-panel-class',
+            data: order,
+        });
     }
 
     private getOrders(): void {

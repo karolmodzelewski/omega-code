@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ShepherdsViewComponent } from './shepherds-view.component';
 import { ShepherdsViewRoutingModule } from './shepherds-view-routing.module';
@@ -25,6 +26,7 @@ import { ErrorStateComponent } from 'src/app/components/error-state/error-state.
         MatButtonModule,
         MatIconModule,
         MatTableModule,
+        MatDialogModule,
         LoadingStateComponent,
         ErrorStateComponent,
     ]
