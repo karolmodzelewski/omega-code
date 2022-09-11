@@ -1,3 +1,10 @@
 <header class="header">
     <omega-back-to-dashboard-button></omega-back-to-dashboard-button>
 </header>
+
+<main *ngIf="viewState === ViewState.SUCCESS" class="main">
+    <omega-make-an-order [products]="products" class="section"></omega-make-an-order>
+</main>
+
+<omega-loading-state *ngIf="viewState === ViewState.LOADING"></omega-loading-state>
+<omega-error-state *ngIf="viewState === ViewState.ERROR"></omega-error-state>

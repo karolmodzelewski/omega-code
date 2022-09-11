@@ -1,0 +1,10 @@
+<ng-container [ngSwitch]="key">
+    <span *ngSwitchCase="MakeAnOrderFormControl.NAME" i18n>Name</span>
+    <span *ngSwitchCase="MakeAnOrderFormControl.SURNAME" i18n>Surname</span>
+    <span *ngSwitchCase="MakeAnOrderFormControl.CITY" i18n>City</span>
+    <span *ngSwitchCase="MakeAnOrderFormControl.POSTAL_CODE" i18n>Postal code</span>
+    <span *ngSwitchCase="MakeAnOrderFormControl.STREET" i18n>Street</span>
+    <span *ngSwitchCase="MakeAnOrderFormControl.HOUSE_NUMBER" i18n>House number</span>
+    <span *ngSwitchCase="MakeAnOrderFormControl.FLAT_NUMBER" i18n>Flat number</span>
+    <span *ngSwitchDefault>{{ key }}</span>
+</ng-container>

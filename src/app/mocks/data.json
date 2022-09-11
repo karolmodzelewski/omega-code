@@ -128,5 +128,77 @@
             "totalAmount": 9,
             "totalPrice": 222
         }
+    ],
+    "oscypeks": [
+        {
+            "name": "Oscypek od Bacy",
+            "price": 1
+        },
+        {
+            "name": "Syr ino hyj",
+            "price": 3
+        },
+        {
+            "name": "Baran też owca",
+            "price": 5
+        },
+        {
+            "name": "Górolski specjoł",
+            "price": 4
+        },
+        {
+            "name": "Ciupaga",
+            "price": 2.5
+        }
+    ],
+    "types": [
+        {
+            "name": "NORMAL",
+            "price": 0
+        },
+        {
+            "name": "SMOKED",
+            "price": 1.5
+        }
+    ],
+    "sizes": [
+        {
+            "name": "SMALL",
+            "price": 0
+        },
+        {
+            "name": "MEDIUM",
+            "price": 2
+        },
+        {
+            "name": "LARGE",
+            "price": 4
+        }
+    ],
+    "extras": [
+        {
+            "name": "Coca-Cola",
+            "price": 4
+        },
+        {
+            "name": "Pepsi",
+            "price": 3
+        },
+        {
+            "name": "Fanta",
+            "price": 6
+        },
+        {
+            "name": "Sprite",
+            "price": 7
+        },
+        {
+            "name": "GARLIC_PESTO",
+            "price": 8
+        },
+        {
+            "name": "CRANBERRY_SAUCE",
+            "price": 5
+        }
     ]
 }
