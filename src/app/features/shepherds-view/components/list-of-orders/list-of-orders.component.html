@@ -20,7 +20,7 @@
         </ng-container>
 
         <ng-container [matColumnDef]="DisplayedColumn.AMOUNT">
-            <mat-header-cell *matHeaderCellDef class="header-cell" mat-header-cell i18n>Total amount:</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef class="header-cell" mat-header-cell i18n>Ordered products:</mat-header-cell>
             <mat-cell *matCellDef="let order" mat-cell>
                 <p class="ellipsis">{{ order.totalAmount }}</p>
             </mat-cell>
