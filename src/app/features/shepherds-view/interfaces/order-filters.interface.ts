@@ -1,5 +1,5 @@
-import { OscypekType } from '../components/filters/enums/oscypek-type.enum';
-import { OscypekSize } from '../components/filters/enums/oscypek-size.enum';
+import { OscypekType } from '../../../enums/oscypek-type.enum';
+import { OscypekSize } from '../../../enums/oscypek-size.enum';
 
 export interface OrderFilters {
     city: string;

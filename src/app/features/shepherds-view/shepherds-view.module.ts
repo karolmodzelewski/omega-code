@@ -17,6 +17,9 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
 import { LoadingStateComponent } from 'src/app/components/loading-state/loading-state.component';
 import { ErrorStateComponent } from 'src/app/components/error-state/error-state.component';
 import { BackToDashboardButtonComponent } from 'src/app/components/back-to-dashboard-button/back-to-dashboard-button.component';
+import { OscypekTypeTranslationComponent } from '../../components/translations/oscypek-type-translation/oscypek-type-translation.component';
+import { OscypekSizeTranslationComponent } from '../../components/translations/oscypek-size-translation/oscypek-size-translation.component';
+import { ProductNameTranslationComponent } from '../../components/translations/product-name-translation/product-name-translation.component';
 
 @NgModule({
     declarations: [
@@ -39,6 +42,9 @@ import { BackToDashboardButtonComponent } from 'src/app/components/back-to-dashb
         LoadingStateComponent,
         ErrorStateComponent,
         BackToDashboardButtonComponent,
+        OscypekTypeTranslationComponent,
+        OscypekSizeTranslationComponent,
+        ProductNameTranslationComponent,
     ]
 })
 export class ShepherdsViewModule { }

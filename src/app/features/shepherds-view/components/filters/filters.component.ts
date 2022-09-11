@@ -1,4 +1,3 @@
-import { OscypekType } from './enums/oscypek-type.enum';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -8,7 +7,8 @@ import { map, skip, startWith } from 'rxjs/operators';
 import { Destroyable } from '../../../../utils/destroyable.util';
 import { Orders } from '../../interfaces/orders.interface';
 import { OrderFilterFormControl } from './enums/order-filter-form-control.enum';
-import { OscypekSize } from './enums/oscypek-size.enum';
+import { OscypekSize } from '../../../../enums/oscypek-size.enum';
+import { OscypekType } from '../../../../enums/oscypek-type.enum';
 import { OrderFilters } from '../../interfaces/order-filters.interface';
 import { OrderFiltersForm } from './types/order-filters-form.type';
 

@@ -118,6 +118,11 @@
                     "name": "Coca-Cola",
                     "amount": 2,
                     "price": 5
+                },
+                {
+                    "name": "GARLIC_PESTO",
+                    "amount": 1,
+                    "price": 8
                 }
             ],
             "totalAmount": 9,

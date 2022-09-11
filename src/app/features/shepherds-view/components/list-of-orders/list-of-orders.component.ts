@@ -74,8 +74,8 @@ export class ListOfOrdersComponent extends Destroyable implements OnInit {
                 result = result && orders.order.some((order: Order) => order.size === orderFilters?.oscypekSize);
             }
 
-            return result
-        })
+            return result;
+        });
 
         return filteredOrders;
     }

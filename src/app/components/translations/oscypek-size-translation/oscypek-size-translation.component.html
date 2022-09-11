@@ -1,0 +1,6 @@
+<ng-container [ngSwitch]="key">
+    <span *ngSwitchCase="OscypekSize.SMALL" i18n>Small</span>
+    <span *ngSwitchCase="OscypekSize.MEDIUM" i18n>Medium</span>
+    <span *ngSwitchCase="OscypekSize.LARGE" i18n>Large</span>
+    <span *ngSwitchDefault>{{ key }}</span>
+</ng-container>
