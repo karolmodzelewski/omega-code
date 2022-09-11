@@ -4,8 +4,8 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start:en": "ng serve --configuration en-US",
-        "start:pl": "ng serve --configuration pl",
+        "start:en": "ng serve --configuration en-US --port=4201",
+        "start:pl": "ng serve --configuration pl --port=4202",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
