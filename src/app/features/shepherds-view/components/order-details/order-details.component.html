@@ -33,15 +33,15 @@
                     &ngsp;
                     <omega-product-name-translation [key]="order.name"></omega-product-name-translation>
                 </p>
-                <p *ngIf="order.size" class="paragraph">
-                    <span class="details-name" i18n>Size:</span>
-                    &ngsp;
-                    <omega-oscypek-size-translation [key]="order.size"></omega-oscypek-size-translation>
-                </p>
                 <p *ngIf="order.type" class="paragraph">
                     <span class="details-name" i18n>Type:</span>
                     &ngsp;
                     <omega-oscypek-type-translation [key]="order.type"></omega-oscypek-type-translation>
+                </p>
+                <p *ngIf="order.size" class="paragraph">
+                    <span class="details-name" i18n>Size:</span>
+                    &ngsp;
+                    <omega-oscypek-size-translation [key]="order.size"></omega-oscypek-size-translation>
                 </p>
                 <p class="paragraph">
                     <span class="details-name" i18n>Amount:</span>
@@ -49,16 +49,20 @@
                 </p>
                 <p class="paragraph">
                     <span class="details-name" i18n>Price:</span>
-                    {{ order.price }}
-                    <ng-container i18n>PLN</ng-container>
+                    <span class="price">
+                        {{ order.price }}
+                        <ng-container i18n>PLN</ng-container>
+                    </span>
                 </p>
             </div>
         </section>
         <section class="section">
             <p class="total-price">
                 <ng-container i18n>Total price:</ng-container>
-                {{ clientsOrder.totalPrice }}
-                <ng-container i18n>PLN</ng-container>
+                <span class="price">
+                    {{ clientsOrder.totalPrice }}
+                    <ng-container i18n>PLN</ng-container>
+                </span>
             </p>
         </section>
     </div>
