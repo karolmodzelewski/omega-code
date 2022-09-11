@@ -11,4 +11,6 @@ export enum MakeAnOrderFormControl {
     SIZE = 'SIZE',
     AMOUNT = 'AMOUNT',
     EXTRA = 'EXTRA',
+    TOTAL_PRICE = 'TOTAL_PRICE',
+    TOTAL_AMOUNT = 'TOTAL_AMOUNT',
 }

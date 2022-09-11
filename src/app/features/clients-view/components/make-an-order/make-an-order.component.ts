@@ -31,6 +31,7 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
     public types: Product[] = [];
     public sizes: Product[] = [];
     public totalPrice: number = 0;
+    public totalAmount: number = 0;
 
     public get customerFormGroup(): FormGroup {
         return this.form.get(MakeAnOrderFormGroup.CUSTOMER) as FormGroup;
@@ -44,6 +45,10 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
         return this.form.get(MakeAnOrderFormArray.EXTRAS) as FormArray;
     }
 
+    public get isFormDisabled(): boolean {
+        return this.form.disabled;
+    }
+
     constructor(private makeAnOrderFormService: MakeAnOrderFormService) {
         super();
     }
@@ -51,13 +56,17 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
     public ngOnInit(): void {
         this.getProductsData();
         this.buildForm();
-        this.countTotalPrice();
+        this.getTotalPriceAndAmount();
     }
 
     public saveOrder(): void {
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             return;
+        }
+
+        if (this.form.valid) {
+            this.prepareDataToSend();
         }
     }
 
@@ -95,6 +104,13 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
 
     public iterateByOriginalOrder = (): number => 0;
 
+    private prepareDataToSend(): void {
+        this.form.get(MakeAnOrderFormControl.TOTAL_PRICE).setValue(this.totalPrice);
+        this.form.get(MakeAnOrderFormControl.TOTAL_AMOUNT).setValue(this.totalAmount);
+
+        this.makeAnOrderFormService.prepareDataToSend();
+    }
+
     private getProductsData(): void {
         const [ oscypeks, types, sizes, extras ] = this.products;
 
@@ -104,27 +120,34 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
         this.extras = extras;
     }
 
-    private countTotalPrice(): void {
+    private getTotalPriceAndAmount(): void {
         combineLatest([
             this.oscypeksFormArray.valueChanges.pipe(startWith([])),
             this.extrasFormArray.valueChanges.pipe(startWith([])),
         ])
             .pipe(takeUntil(this.destroyed$))
-            .subscribe((products: [Oscypek[], Extra[]]) => {
-                const [ oscypeks, extras ] = products;
-                let oscypeksPrice: number = 0;
-                let extrasPrice: number = 0;
+            .subscribe((products: [Oscypek[], Extra[]]) => this.countTotalPriceAndAmount(products));
+    }
 
-                if (oscypeks.length) {
-                    oscypeksPrice += this.countOscypeksPrice(oscypeks);
-                }
+    private countTotalPriceAndAmount(products: [Oscypek[], Extra[]]): void {
+        const [ oscypeks, extras ] = products;
+        let oscypeksPrice: number = 0;
+        let oscypeksAmount: number = 0;
+        let extrasPrice: number = 0;
+        let extrasAmount: number = 0;
 
-                if (extras.length) {
-                    extrasPrice += this.countExtrasPrice(extras);
-                }
+        if (oscypeks.length) {
+            oscypeksPrice += this.countOscypeksPrice(oscypeks);
+            oscypeksAmount += this.countOscypeksAmount(oscypeks);
+        }
 
-                this.totalPrice = oscypeksPrice += extrasPrice;
-            });
+        if (extras.length) {
+            extrasPrice += this.countExtrasPrice(extras);
+            extrasAmount += this.countExtrasAmount(extras);
+        }
+
+        this.totalPrice = oscypeksPrice += extrasPrice;
+        this.totalAmount = oscypeksAmount += extrasAmount;
     }
 
     private countOscypeksPrice(oscypeks: Oscypek[]): number {
@@ -173,6 +196,26 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
         });
 
         return extrasPrice;
+    }
+
+    private countOscypeksAmount(oscypeks: Oscypek[]): number {
+        let oscypeksAmount: number = 0;
+
+        oscypeks.forEach((oscypek: Oscypek) => oscypeksAmount += +oscypek[MakeAnOrderFormControl.AMOUNT]);
+
+        return oscypeksAmount;
+    }
+
+    private countExtrasAmount(extras: Extra[]): number {
+        let extrasAmount: number = 0;
+
+        extras.forEach((extra: Extra) => {
+            if (extra[MakeAnOrderFormControl.EXTRA].name) {
+                extrasAmount += +extra[MakeAnOrderFormControl.AMOUNT]
+            }
+        });
+
+        return extrasAmount;
     }
 
     private buildForm(): void {

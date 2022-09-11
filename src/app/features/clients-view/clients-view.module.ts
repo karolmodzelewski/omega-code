@@ -19,12 +19,17 @@ import { ProductNameTranslationComponent } from '../../components/translations/p
 import { LoadingStateComponent } from './../../components/loading-state/loading-state.component';
 import { ErrorStateComponent } from './../../components/error-state/error-state.component';
 import { MakeAnOrderFormService } from './components/make-an-order/services/make-an-order-form.service';
+import { SummaryInfobarComponent } from './components/summary/components/summary-infobar/summary-infobar.component';
+import { SuccessInfobarComponent } from './components/summary/components/success-infobar/success-infobar.component';
 
 @NgModule({
     declarations: [
         ClientsViewComponent,
         MakeAnOrderComponent,
+        SummaryComponent,
         CustomerDetailTranslationComponent,
+        SummaryInfobarComponent,
+        SuccessInfobarComponent
     ],
     imports: [
         CommonModule,

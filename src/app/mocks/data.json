@@ -1,6 +1,7 @@
 {
     "orders": [
         {
+            "id": 1,
             "customer": {
                 "name": "Jan",
                 "surname": "Nowak",
@@ -42,6 +43,7 @@
             "totalPrice": 222
         },
         {
+            "id": 2,
             "customer": {
                 "name": "Jan",
                 "surname": "Kowalski",
@@ -83,6 +85,7 @@
             "totalPrice": 222
         },
         {
+            "id": 3,
             "customer": {
                 "name": "Jan",
                 "surname": "Naj",

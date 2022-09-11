@@ -7,10 +7,10 @@ import { catchError, EMPTY, map, takeUntil } from 'rxjs';
 import { Destroyable } from '../../../../utils/destroyable.util';
 import { DisplayedColumn } from './enums/displayed-column.enum';
 import { ViewState } from '../../../../enums/view-state.enum';
-import { Orders } from '../../interfaces/orders.interface';
+import { Orders } from '../../../../interfaces/orders.interface';
 import { OrderDetailsComponent } from '../order-details/order-details.component';
 import { OrderFilters } from '../../interfaces/order-filters.interface';
-import { Order } from '../../interfaces/order.interface';
+import { Order } from '../../../../interfaces/order.interface';
 
 @Component({
     selector: 'omega-list-of-orders',

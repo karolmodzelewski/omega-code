@@ -1,28 +1,33 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { catchError, combineLatest, EMPTY, takeUntil } from 'rxjs';
 
 import { Destroyable } from '../../utils/destroyable.util';
 import { ViewState } from './../../enums/view-state.enum';
 import { Product } from './components/make-an-order/interfaces/product.interface';
+import { MakeAnOrderFormService } from './components/make-an-order/services/make-an-order-form.service';
 
 @Component({
     selector: 'omega-clients-view',
     templateUrl: './clients-view.component.html',
     styleUrls: ['./clients-view.component.scss']
 })
-export class ClientsViewComponent extends Destroyable implements OnInit {
+export class ClientsViewComponent extends Destroyable implements OnInit, OnDestroy {
     public viewState: ViewState = ViewState.LOADING;
     public ViewState: typeof ViewState = ViewState;
     public products: [Product[], Product[], Product[], Product[]];
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient, private makeAnOrderFormService: MakeAnOrderFormService) {
         super();
     }
 
     public ngOnInit(): void {
         this.getProductsData();
+    }
+
+    public override ngOnDestroy(): void {
+        this.makeAnOrderFormService.resetSummary();
     }
 
     private getProductsData(): void {

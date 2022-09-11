@@ -4,6 +4,7 @@
 
 <main *ngIf="viewState === ViewState.SUCCESS" class="main">
     <omega-make-an-order [products]="products" class="section"></omega-make-an-order>
+    <omega-summary class="section"></omega-summary>
 </main>
 
 <omega-loading-state *ngIf="viewState === ViewState.LOADING"></omega-loading-state>

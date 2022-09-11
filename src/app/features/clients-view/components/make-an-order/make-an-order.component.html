@@ -104,6 +104,7 @@
                 <button
                     *ngIf="oscypeksFormArray.length < oscypeks.length"
                     (click)="addProduct(MakeAnOrderFormArray.OSCYPEKS, $event)"
+                    [disabled]="isFormDisabled"
                     color="primary"
                     mat-mini-fab
                 >
@@ -112,6 +113,7 @@
                 <button
                     *ngIf="oscypeksFormArray.length > 1"
                     (click)="removeProduct(MakeAnOrderFormArray.OSCYPEKS, index, $event)"
+                    [disabled]="isFormDisabled"
                     color="primary"
                     mat-mini-fab
                 >
@@ -165,6 +167,7 @@
                 <button
                     *ngIf="extrasFormArray.length < extras.length"
                     (click)="addProduct(MakeAnOrderFormArray.EXTRAS, $event)"
+                    [disabled]="isFormDisabled"
                     color="primary"
                     mat-mini-fab
                 >
@@ -173,6 +176,7 @@
                 <button
                     *ngIf="extrasFormArray.length > 1"
                     (click)="removeProduct(MakeAnOrderFormArray.EXTRAS, index, $event)"
+                    [disabled]="isFormDisabled"
                     color="primary"
                     mat-mini-fab
                 >
@@ -186,13 +190,16 @@
 <section class="section">
     <h2>
         <ng-container i18n>Total price:</ng-container>
-        {{ totalPrice }}
-        <ng-container i18n>PLN</ng-container>
+        <span class="price">
+            {{ totalPrice }}
+            <ng-container i18n>PLN</ng-container>
+        </span>
     </h2>
 </section>
 
 <button
     (click)="saveOrder()"
+    [disabled]="isFormDisabled"
     class="save-order-button"
     color="primary"
     mat-raised-button

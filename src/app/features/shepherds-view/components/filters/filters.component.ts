@@ -5,7 +5,7 @@ import { debounceTime, distinctUntilChanged, combineLatest, takeUntil, Observabl
 import { map, skip, startWith } from 'rxjs/operators';
 
 import { Destroyable } from '../../../../utils/destroyable.util';
-import { Orders } from '../../interfaces/orders.interface';
+import { Orders } from '../../../../interfaces/orders.interface';
 import { OrderFilterFormControl } from './enums/order-filter-form-control.enum';
 import { OscypekSize } from '../../../../enums/oscypek-size.enum';
 import { OscypekType } from '../../../../enums/oscypek-type.enum';
