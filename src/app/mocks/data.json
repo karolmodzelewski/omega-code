@@ -1,207 +1,267 @@
 {
-    "orders": [
+  "orders": [
+    {
+      "customer": {
+        "name": "Marcin",
+        "surname": "Zima",
+        "city": "Kraków",
+        "postalCode": "12-231",
+        "street": "Krakowska",
+        "houseNumber": "12",
+        "flatNumber": "8b"
+      },
+      "order": [
         {
-            "id": 1,
-            "customer": {
-                "name": "Jan",
-                "surname": "Nowak",
-                "city": "Warsaw",
-                "postalCode": "11-121",
-                "street": "Warszawska",
-                "houseNumber": "23",
-                "flatNumber": "15b"
-            },
-            "order": [
-                {
-                    "name": "Oscypek od Bacy",
-                    "size": "LARGE",
-                    "type": "NORMAL",
-                    "amount": 2,
-                    "price": 12
-                },
-                {
-                    "name": "Oscypek od Bacy",
-                    "size": "LARGE",
-                    "type": "NORMAL",
-                    "amount": 3,
-                    "price": 10
-                },
-                {
-                    "name": "Oscypek od Bacy",
-                    "size": "LARGE",
-                    "type": "NORMAL",
-                    "amount": 1,
-                    "price": 1
-                },
-                {
-                    "name": "Coca-Cola",
-                    "amount": 2,
-                    "price": 13
-                }
-            ],
-            "totalAmount": 6,
-            "totalPrice": 222
+          "name": "Oscypek od Bacy",
+          "type": "SMOKED",
+          "size": "MEDIUM",
+          "amount": 5,
+          "price": 22.5
         },
         {
-            "id": 2,
-            "customer": {
-                "name": "Jan",
-                "surname": "Kowalski",
-                "city": "Szczecin",
-                "postalCode": "11-121",
-                "street": "Warszawska",
-                "houseNumber": "23",
-                "flatNumber": "15b"
-            },
-            "order": [
-                {
-                    "name": "Oscypek od Bacy",
-                    "size": "LARGE",
-                    "type": "NORMAL",
-                    "amount": 2,
-                    "price": 8
-                },
-                {
-                    "name": "Oscypek od Bacy",
-                    "size": "MEDIUM",
-                    "type": "NORMAL",
-                    "amount": 3,
-                    "price": 5
-                },
-                {
-                    "name": "Oscypek od Bacy",
-                    "size": "SMALL",
-                    "type": "SMOKED",
-                    "amount": 1,
-                    "price": 11
-                },
-                {
-                    "name": "Coca-Cola",
-                    "amount": 1,
-                    "price": 2
-                }
-            ],
-            "totalAmount": 5,
-            "totalPrice": 222
+          "name": "Górolski specjoł",
+          "type": "SMOKED",
+          "size": "MEDIUM",
+          "amount": 5,
+          "price": 37.5
         },
         {
-            "id": 3,
-            "customer": {
-                "name": "Jan",
-                "surname": "Naj",
-                "city": "Białystok",
-                "postalCode": "11-121",
-                "street": "Warszawska",
-                "houseNumber": "23",
-                "flatNumber": "15b"
-            },
-            "order": [
-                {
-                    "name": "Oscypek od Bacy",
-                    "size": "LARGE",
-                    "type": "NORMAL",
-                    "amount": 5,
-                    "price": 1
-                },
-                {
-                    "name": "Oscypek od Bacy",
-                    "size": "MEDIUM",
-                    "type": "SMOKED",
-                    "amount": 3,
-                    "price": 6
-                },
-                {
-                    "name": "Oscypek od Bacy",
-                    "size": "SMALL",
-                    "type": "SMOKED",
-                    "amount": 1,
-                    "price": 3
-                },
-                {
-                    "name": "Coca-Cola",
-                    "amount": 2,
-                    "price": 5
-                },
-                {
-                    "name": "GARLIC_PESTO",
-                    "amount": 1,
-                    "price": 8
-                }
-            ],
-            "totalAmount": 9,
-            "totalPrice": 222
+          "name": "Baran też owca",
+          "type": "NORMAL",
+          "size": "LARGE",
+          "amount": 1,
+          "price": 9
+        },
+        {
+          "name": "Syr ino hyj",
+          "type": "SMOKED",
+          "size": "LARGE",
+          "amount": 2,
+          "price": 17
+        },
+        {
+          "name": "GARLIC_PESTO",
+          "amount": 1,
+          "price": 8
+        },
+        {
+          "name": "CRANBERRY_SAUCE",
+          "amount": 2,
+          "price": 10
         }
-    ],
-    "oscypeks": [
+      ],
+      "totalAmount": 16,
+      "totalPrice": 104,
+      "id": 1
+    },
+    {
+      "customer": {
+        "name": "Teresa",
+        "surname": "Kowalczuk",
+        "city": "Łódź",
+        "postalCode": "33-132",
+        "street": "Łódzka",
+        "houseNumber": "11",
+        "flatNumber": "1"
+      },
+      "order": [
         {
-            "name": "Oscypek od Bacy",
-            "price": 1
+          "name": "Syr ino hyj",
+          "type": "SMOKED",
+          "size": "MEDIUM",
+          "amount": 10,
+          "price": 65
         },
         {
-            "name": "Syr ino hyj",
-            "price": 3
+          "name": "Ciupaga",
+          "type": "NORMAL",
+          "size": "LARGE",
+          "amount": 15,
+          "price": 97.5
         },
         {
-            "name": "Baran też owca",
-            "price": 5
+          "name": "Oscypek od Bacy",
+          "type": "NORMAL",
+          "size": "SMALL",
+          "amount": 2,
+          "price": 2
         },
         {
-            "name": "Górolski specjoł",
-            "price": 4
+          "name": "Sprite",
+          "amount": 5,
+          "price": 35
         },
         {
-            "name": "Ciupaga",
-            "price": 2.5
+          "name": "Pepsi",
+          "amount": 5,
+          "price": 15
+        },
+        {
+          "name": "GARLIC_PESTO",
+          "amount": 1,
+          "price": 8
+        },
+        {
+          "name": "CRANBERRY_SAUCE",
+          "amount": 5,
+          "price": 25
         }
-    ],
-    "types": [
+      ],
+      "totalAmount": 43,
+      "totalPrice": 247.5,
+      "id": 2
+    },
+    {
+      "customer": {
+        "name": "Jan",
+        "surname": "Nowak",
+        "city": "Warszawa",
+        "postalCode": "11-631",
+        "street": "Warszawska",
+        "houseNumber": "93",
+        "flatNumber": "55s/1n"
+      },
+      "order": [
         {
-            "name": "NORMAL",
-            "price": 0
+          "name": "Syr ino hyj",
+          "type": "SMOKED",
+          "size": "SMALL",
+          "amount": 10,
+          "price": 45
         },
         {
-            "name": "SMOKED",
-            "price": 1.5
+          "name": "GARLIC_PESTO",
+          "amount": 1,
+          "price": 8
+        },
+        {
+          "name": "CRANBERRY_SAUCE",
+          "amount": 1,
+          "price": 5
         }
-    ],
-    "sizes": [
+      ],
+      "totalAmount": 12,
+      "totalPrice": 58,
+      "id": 3
+    },
+    {
+      "customer": {
+        "name": "Maciej",
+        "surname": "Walczak",
+        "city": "Białystok",
+        "postalCode": "99-213",
+        "street": "Wolska",
+        "houseNumber": "44",
+        "flatNumber": ""
+      },
+      "order": [
         {
-            "name": "SMALL",
-            "price": 0
+          "name": "Baran też owca",
+          "type": "SMOKED",
+          "size": "MEDIUM",
+          "amount": 2,
+          "price": 17
         },
         {
-            "name": "MEDIUM",
-            "price": 2
+          "name": "Górolski specjoł",
+          "type": "SMOKED",
+          "size": "LARGE",
+          "amount": 3,
+          "price": 28.5
         },
         {
-            "name": "LARGE",
-            "price": 4
+          "name": "Ciupaga",
+          "type": "NORMAL",
+          "size": "SMALL",
+          "amount": 1,
+          "price": 2.5
+        },
+        {
+          "name": "Pepsi",
+          "amount": 5,
+          "price": 15
+        },
+        {
+          "name": "Sprite",
+          "amount": 1,
+          "price": 7
         }
-    ],
-    "extras": [
-        {
-            "name": "Coca-Cola",
-            "price": 4
-        },
-        {
-            "name": "Pepsi",
-            "price": 3
-        },
-        {
-            "name": "Fanta",
-            "price": 6
-        },
-        {
-            "name": "Sprite",
-            "price": 7
-        },
-        {
-            "name": "GARLIC_PESTO",
-            "price": 8
-        },
-        {
-            "name": "CRANBERRY_SAUCE",
-            "price": 5
-        }
-    ]
+      ],
+      "totalAmount": 12,
+      "totalPrice": 70,
+      "id": 4
+    }
+  ],
+  "oscypeks": [
+    {
+      "name": "Oscypek od Bacy",
+      "price": 1
+    },
+    {
+      "name": "Syr ino hyj",
+      "price": 3
+    },
+    {
+      "name": "Baran też owca",
+      "price": 5
+    },
+    {
+      "name": "Górolski specjoł",
+      "price": 4
+    },
+    {
+      "name": "Ciupaga",
+      "price": 2.5
+    }
+  ],
+  "types": [
+    {
+      "name": "NORMAL",
+      "price": 0
+    },
+    {
+      "name": "SMOKED",
+      "price": 1.5
+    }
+  ],
+  "sizes": [
+    {
+      "name": "SMALL",
+      "price": 0
+    },
+    {
+      "name": "MEDIUM",
+      "price": 2
+    },
+    {
+      "name": "LARGE",
+      "price": 4
+    }
+  ],
+  "extras": [
+    {
+      "name": "Coca-Cola",
+      "price": 4
+    },
+    {
+      "name": "Pepsi",
+      "price": 3
+    },
+    {
+      "name": "Fanta",
+      "price": 6
+    },
+    {
+      "name": "Sprite",
+      "price": 7
+    },
+    {
+      "name": "GARLIC_PESTO",
+      "price": 8
+    },
+    {
+      "name": "CRANBERRY_SAUCE",
+      "price": 5
+    }
+  ]
 }
