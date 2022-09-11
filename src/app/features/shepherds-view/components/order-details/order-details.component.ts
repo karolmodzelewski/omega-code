@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { Orders } from '../../interfaces/orders.interface';
+import { Orders } from '../../../../interfaces/orders.interface';
 
 @Component({
     selector: 'omega-order-details',

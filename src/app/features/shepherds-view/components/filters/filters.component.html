@@ -1,4 +1,4 @@
-<h1 i18n>Filters</h1>
+<h1 class="filters-heading" i18n>Filters:</h1>
 
 <form [formGroup]="form">
     <mat-form-field>
@@ -10,7 +10,7 @@
         <mat-select [formControlName]="OrderFilterFormControl.OSCYPEK_TYPE">
             <mat-option value=""></mat-option>
             <mat-option *ngFor="let oscypekType of oscypekTypes" [value]="oscypekType">
-                {{ oscypekType | titlecase }}
+                <omega-oscypek-type-translation [key]="oscypekType"></omega-oscypek-type-translation>
             </mat-option>
         </mat-select>
     </mat-form-field>
@@ -19,13 +19,12 @@
         <mat-select [formControlName]="OrderFilterFormControl.OSCYPEK_SIZE">
             <mat-option value=""></mat-option>
             <mat-option *ngFor="let oscypekSize of oscypekSizes" [value]="oscypekSize">
-                {{ oscypekSize | titlecase }}
+                <omega-oscypek-size-translation [key]="oscypekSize"></omega-oscypek-size-translation>
             </mat-option>
         </mat-select>
     </mat-form-field>
     <button
         (click)="resetFilters()"
-        class="button"
         color="primary"
         mat-raised-button
         i18n

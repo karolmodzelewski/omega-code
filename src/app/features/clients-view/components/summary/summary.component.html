@@ -1,0 +1,79 @@
+<h1 class="summary-heading" i18n>Summary:</h1>
+
+<omega-summary-infobar class="infobar"></omega-summary-infobar>
+
+<main *ngIf="(orderSummary$ | async) as summary" class="main">
+    <section class="section">
+        <h2 i18n>Your details:</h2>
+        <p class="paragraph">
+            <span class="details-name" i18n>Full name:</span>
+            {{ summary.customer.name }} {{ summary.customer.surname }}
+        </p>
+        <p class="paragraph">
+            <span class="details-name" i18n>City:</span>
+            {{ summary.customer.city }}
+        </p>
+        <p class="paragraph">
+            <span class="details-name" i18n>Address:</span>
+            {{ summary.customer.street }} {{ summary.customer.houseNumber }} {{ summary.customer?.flatNumber }}
+        </p>
+        <p class="paragraph">
+            <span class="details-name" i18n>Postal code:</span>
+            {{ summary.customer.postalCode }}
+        </p>
+    </section>
+    <section class="section">
+        <h2 i18n>Your order:</h2>
+        <div *ngFor="let order of summary.order" class="order">
+            <p class="paragraph">
+                <span class="details-name" i18n>Name:</span>
+                &ngsp;
+                <omega-product-name-translation [key]="order.name"></omega-product-name-translation>
+            </p>
+            <p *ngIf="order?.type" class="paragraph">
+                <span class="details-name" i18n>Type:</span>
+                &ngsp;
+                <omega-oscypek-type-translation [key]="order.type"></omega-oscypek-type-translation>
+            </p>
+            <p *ngIf="order?.size" class="paragraph">
+                <span class="details-name" i18n>Size:</span>
+                &ngsp;
+                <omega-oscypek-size-translation [key]="order.size"></omega-oscypek-size-translation>
+            </p>
+            <p class="paragraph">
+                <span class="details-name" i18n>Amount:</span>
+                {{ order.amount }}
+            </p>
+            <p class="paragraph">
+                <span class="details-name" i18n>Price:</span>
+                <span class="price">
+                    {{ order.price }}
+                    <ng-container i18n>PLN</ng-container>
+                </span>
+            </p>
+        </div>
+    </section>
+    <section class="section summary">
+        <p class="summary-detail">
+            <ng-container i18n>Ordered products:</ng-container>
+            {{ summary.totalAmount }}
+        </p>
+        <p class="summary-detail">
+            <ng-container i18n>Total price:</ng-container>
+            <span class="price">
+                {{ summary.totalPrice }}
+                <ng-container i18n>PLN</ng-container>
+            </span>
+        </p>
+    </section>
+
+    <omega-error-state *ngIf="viewState === ViewState.ERROR" class="error"></omega-error-state>
+
+    <button (click)="submitOrder()" [disabled]="isFormDisabled" color="primary" mat-raised-button>
+        <mat-icon *ngIf="viewState === ViewState.LOADING" fontIcon="loop"></mat-icon>
+        <ng-container *ngIf="viewState === ViewState.ERROR" i18n>Try again</ng-container>
+        <ng-container *ngIf="!viewState" i18n>Submit order</ng-container>
+    </button>
+
+    <omega-success-infobar *ngIf="viewState === ViewState.SUCCESS"></omega-success-infobar>
+</main>

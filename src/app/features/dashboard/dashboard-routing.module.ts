@@ -10,6 +10,10 @@ const routes: Routes = [
         component: DashboardComponent,
     },
     {
+        path: Route.CLIENTS_VIEW,
+        loadChildren: () => import('../clients-view/clients-view.module').then((m) => m.ClientsViewModule)
+    },
+    {
         path: Route.SHEPHERDS_VIEW,
         loadChildren: () => import('../shepherds-view/shepherds-view.module').then((m) => m.ShepherdsViewModule)
     },

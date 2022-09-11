@@ -1,7 +1,18 @@
+@use 'src/assets/styles/colors' as *;
+
 .mat-form-field {
     margin-right: 20px;
 
     &:last-of-type {
         margin-right: 40px;
     }
+}
+
+.mat-option:not(:last-of-type) {
+    border-bottom: 1px solid $color-dark-white;
+}
+
+.filters-heading {
+    font-size: 26px;
+    font-weight: 500;
 }

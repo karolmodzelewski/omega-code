@@ -1,0 +1,5 @@
+<ng-container [ngSwitch]="key">
+    <span *ngSwitchCase="OscypekType.NORMAL" i18n>Normal</span>
+    <span *ngSwitchCase="OscypekType.SMOKED" i18n>Smoked</span>
+    <span *ngSwitchDefault>{{ key }}</span>
+</ng-container>

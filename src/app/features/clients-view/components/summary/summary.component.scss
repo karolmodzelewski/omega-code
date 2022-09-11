@@ -1,0 +1,63 @@
+@use 'src/assets/styles/colors' as *;
+
+.summary-heading, .details-name {
+    font-weight: 500;
+}
+
+.summary-heading {
+    font-size: 26px;
+    border-bottom: 3px solid $color-white;
+    padding-bottom: 20px;
+}
+
+.infobar, .main {
+    margin-top: 30px;
+}
+
+.main {
+    padding: 20px;
+    background: $color-white;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.section, .paragraph:last-of-type {
+    margin-bottom: 20px;
+}
+
+.section:not(:last-of-type) {
+    padding-bottom: 10px;
+    border-bottom: 3px solid $color-dark-white;
+}
+
+.paragraph {
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.summary-detail {
+    font-size: 18px;
+    word-break: break-word;
+}
+
+.order {
+    margin-top: 20px;
+
+    &:not(:last-of-type) {
+        border-bottom: 1px solid $color-dark-white;
+    }
+}
+
+.price {
+    color: $color-green;
+}
+
+.error {
+    margin-bottom: 30px;
+}
