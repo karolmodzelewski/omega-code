@@ -185,11 +185,11 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
             let specificProductPrice: number = 0;
 
             if (extra[MakeAnOrderFormControl.EXTRA]) {
-                extrasPrice += +extra[MakeAnOrderFormControl.EXTRA].price;
+                specificProductPrice += +extra[MakeAnOrderFormControl.EXTRA].price;
             }
 
             if (extra[MakeAnOrderFormControl.AMOUNT]) {
-                extrasPrice *= +extra[MakeAnOrderFormControl.AMOUNT];
+                specificProductPrice *= +extra[MakeAnOrderFormControl.AMOUNT];
             }
 
             extrasPrice += specificProductPrice;
