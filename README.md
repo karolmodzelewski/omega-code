@@ -129,3 +129,9 @@ Shepherd's view no data (EN) | Shepherd's view no data (PL)
 ## Any questions?
 
 If you have any questions or found some bugs or anything, feel free to contact me - I will be happy to answer :)
+
+## Easter egg (meme)
+
+Well, maybe not hidden well, but when I read about the topic of the application, this came to my mind:
+
+![Definitely not an easter egg](./src/assets/images/readme/no-easter-eggs/easter_egg.jpg)
