@@ -1,0 +1,33 @@
+<h1 class="filters-heading" i18n>Filters:</h1>
+
+<form [formGroup]="form">
+    <mat-form-field>
+        <mat-label i18n>City</mat-label>
+        <input [formControlName]="OrderFilterFormControl.CITY" matInput>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label i18n>Oscypek type</mat-label>
+        <mat-select [formControlName]="OrderFilterFormControl.OSCYPEK_TYPE">
+            <mat-option value=""></mat-option>
+            <mat-option *ngFor="let oscypekType of oscypekTypes" [value]="oscypekType">
+                <omega-oscypek-type-translation [key]="oscypekType"></omega-oscypek-type-translation>
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label i18n>Oscypek size</mat-label>
+        <mat-select [formControlName]="OrderFilterFormControl.OSCYPEK_SIZE">
+            <mat-option value=""></mat-option>
+            <mat-option *ngFor="let oscypekSize of oscypekSizes" [value]="oscypekSize">
+                <omega-oscypek-size-translation [key]="oscypekSize"></omega-oscypek-size-translation>
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button
+        (click)="resetFilters()"
+        color="primary"
+        mat-raised-button
+    >
+        <ng-container i18n>Reset Filters</ng-container>
+    </button>
+</form>

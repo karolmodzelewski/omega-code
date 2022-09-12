@@ -1,17 +1,18 @@
 {
     "name": "omega-code",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start:en": "ng serve --configuration en-US",
-        "start:pl": "ng serve --configuration pl",
+        "start:en": "ng serve --configuration=en-US --port=4201",
+        "start:pl": "ng serve --configuration=pl --port=4202",
         "build": "ng build",
-        "watch": "ng build --watch --configuration development",
+        "watch": "ng build --watch --configuration=development",
         "test": "ng test",
         "i18n:extract": "ng extract-i18n --output-path src/locales --format=json",
         "lint": "ng lint",
-        "lint:fix": "ng lint --fix"
+        "lint:fix": "ng lint --fix",
+        "mock:server": "json-server src/app/mocks/data.json --routes src/app/mocks/routes.json --no-cors=true --watch"
     },
     "private": true,
     "dependencies": {
@@ -25,7 +26,7 @@
         "@angular/platform-browser": "^14.0.0",
         "@angular/platform-browser-dynamic": "^14.0.0",
         "@angular/router": "^14.0.0",
-        "rxjs": "~7.5.0",
+        "rxjs": "^7.5.6",
         "tslib": "^2.3.0",
         "zone.js": "~0.11.4"
     },
@@ -39,16 +40,24 @@
         "@angular/cli": "~14.2.1",
         "@angular/compiler-cli": "^14.0.0",
         "@angular/localize": "^14.2.1",
-        "@types/jasmine": "~4.0.0",
+        "@types/jasmine": "^4.3.0",
         "@typescript-eslint/eslint-plugin": "5.36.2",
         "@typescript-eslint/parser": "5.36.2",
         "eslint": "^8.23.0",
-        "jasmine-core": "~4.3.0",
+        "eslint-import-resolver-alias": "^1.1.2",
+        "eslint-import-resolver-typescript": "^3.5.1",
+        "eslint-plugin-deprecation": "^1.3.2",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jsdoc": "^39.3.6",
+        "eslint-plugin-prefer-arrow": "^1.2.3",
+        "eslint-plugin-unused-imports": "^2.0.0",
+        "jasmine-core": "^4.4.0",
+        "json-server": "^0.17.0",
         "karma": "~6.4.0",
         "karma-chrome-launcher": "~3.1.0",
         "karma-coverage": "~2.2.0",
         "karma-jasmine": "~5.1.0",
         "karma-jasmine-html-reporter": "~2.0.0",
-        "typescript": "~4.7.2"
+        "typescript": "^4.8.2"
     }
 }

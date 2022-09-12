@@ -1,0 +1,208 @@
+<h1 class="order-heading" i18n>Order:</h1>
+
+<form [formGroup]="form">
+    <section [formArrayName]="MakeAnOrderFormGroup.CUSTOMER" class="section">
+        <h2 i18n>Your details:</h2>
+        <div class="form-group-container">
+            <mat-form-field *ngFor="let customerDetail of customerFormGroup?.controls | keyvalue: iterateByOriginalOrder">
+                <mat-label>
+                    <omega-customer-detail-translation [key]="customerDetail.key"></omega-customer-detail-translation>
+                </mat-label>
+                <input [formControlName]="customerDetail.key" matInput>
+                <mat-error *ngIf="customerDetail?.value?.errors?.['maxlength']">
+                    <ng-container i18n>Value is too long. Maximum length:</ng-container>
+                    {{ customerDetail?.value?.errors?.['maxlength']?.requiredLength }}.
+                </mat-error>
+                <mat-error *ngIf="customerDetail?.value?.errors?.['required']" i18n>This field is required.</mat-error>
+            </mat-form-field>
+        </div>
+    </section>
+
+    <section [formArrayName]="MakeAnOrderFormArray.OSCYPEKS" class="section">
+        <h2 i18n>Oscypeks:</h2>
+        <div
+            *ngFor="let oscypeksFormControl of oscypeksFormArray?.controls; index as index; first as first; last as last"
+            [formGroupName]="index"
+            class="form-group-container"
+        >
+            <mat-form-field>
+                <mat-label i18n>Oscypek</mat-label>
+                <mat-select [formControlName]="MakeAnOrderFormControl.OSCYPEK">
+                    <mat-select-trigger>
+                        {{ oscypeksFormControl.value[MakeAnOrderFormControl.OSCYPEK].name ?? '' }}
+                    </mat-select-trigger>
+                    <mat-option value=""></mat-option>
+                    <mat-option *ngFor="let oscypek of oscypeks" [value]="oscypek" class="multiline-mat-option">
+                        <p class="select-value">{{ oscypek.name }}</p>
+                        <p class="price">
+                            {{ oscypek.price }}
+                            <span i18n>PLN</span>
+                        </p>
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="oscypeksFormControl?.get(MakeAnOrderFormControl.OSCYPEK)?.errors?.['required']" i18n>This field is required.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label i18n>Type</mat-label>
+                <mat-select [formControlName]="MakeAnOrderFormControl.TYPE">
+                    <mat-select-trigger>
+                        <omega-oscypek-type-translation
+                            *ngIf="oscypeksFormControl.value[MakeAnOrderFormControl.TYPE].name"
+                            [key]="oscypeksFormControl.value[MakeAnOrderFormControl.TYPE].name"
+                        ></omega-oscypek-type-translation>
+                    </mat-select-trigger>
+                    <mat-option value=""></mat-option>
+                    <mat-option *ngFor="let type of types" [value]="type" class="multiline-mat-option">
+                        <p class="select-value">
+                            <omega-oscypek-type-translation [key]="type.name"></omega-oscypek-type-translation>
+                        </p>
+                        <p class="price">
+                            + {{ type.price }}
+                            <span i18n>PLN</span>
+                        </p>
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="oscypeksFormControl?.get(MakeAnOrderFormControl.TYPE)?.errors?.['required']" i18n>This field is required.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label i18n>Size</mat-label>
+                <mat-select [formControlName]="MakeAnOrderFormControl.SIZE">
+                    <mat-select-trigger>
+                        <omega-oscypek-size-translation
+                            *ngIf="oscypeksFormControl.value[MakeAnOrderFormControl.SIZE].name"
+                            [key]="oscypeksFormControl.value[MakeAnOrderFormControl.SIZE].name"
+                        ></omega-oscypek-size-translation>
+                    </mat-select-trigger>
+                    <mat-option value=""></mat-option>
+                    <mat-option *ngFor="let size of sizes" [value]="size" class="multiline-mat-option">
+                        <p class="select-value">
+                            <omega-oscypek-size-translation [key]="size.name"></omega-oscypek-size-translation>
+                        </p>
+                        <p class="price">
+                            + {{ size.price }}
+                            <span i18n>PLN</span>
+                        </p>
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="oscypeksFormControl?.get(MakeAnOrderFormControl.SIZE)?.errors?.['required']" i18n>This field is required.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label i18n>Amount</mat-label>
+                <input (keypress)="validateNumericOnly($event)" [formControlName]="MakeAnOrderFormControl.AMOUNT" type="number" matInput>
+                <mat-error *ngIf="oscypeksFormControl?.get(MakeAnOrderFormControl.AMOUNT)?.errors?.['maxlength']">
+                    <ng-container i18n>Value is too long. Maximum length:</ng-container>
+                    {{ oscypeksFormControl?.get(MakeAnOrderFormControl.AMOUNT)?.errors?.['maxlength']?.requiredLength }}.
+                </mat-error>
+                <mat-error *ngIf="oscypeksFormControl?.get(MakeAnOrderFormControl.AMOUNT)?.errors?.['required']" i18n>This field is required.</mat-error>
+                <mat-error *ngIf="oscypeksFormControl?.get(MakeAnOrderFormControl.AMOUNT)?.errors?.['pattern']" i18n>Amount has to be a number greater than 0.</mat-error>
+            </mat-form-field>
+
+            <div class="action-buttons-container">
+                <button
+                    *ngIf="oscypeksFormArray?.length < oscypeks.length"
+                    (click)="addProduct(MakeAnOrderFormArray.OSCYPEKS, $event)"
+                    [disabled]="isFormDisabled"
+                    color="primary"
+                    mat-mini-fab
+                >
+                    <mat-icon fontIcon="add"></mat-icon>
+                </button>
+                <button
+                    *ngIf="oscypeksFormArray?.length > 1"
+                    (click)="removeProduct(MakeAnOrderFormArray.OSCYPEKS, index, $event)"
+                    [disabled]="isFormDisabled"
+                    color="primary"
+                    mat-mini-fab
+                >
+                    <mat-icon fontIcon="remove"></mat-icon>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section [formArrayName]="MakeAnOrderFormArray.EXTRAS" class="section">
+        <h2 i18n>Extras:</h2>
+        <div
+            *ngFor="let extrasFormControl of extrasFormArray?.controls; index as index; first as first; last as last"
+            [formGroupName]="index"
+            class="form-group-container"
+        >
+            <mat-form-field>
+                <mat-label i18n>Extra</mat-label>
+                <mat-select [formControlName]="MakeAnOrderFormControl.EXTRA">
+                    <mat-select-trigger>
+                        <omega-product-name-translation
+                            *ngIf="extrasFormControl.value[MakeAnOrderFormControl.EXTRA].name"
+                            [key]="extrasFormControl.value[MakeAnOrderFormControl.EXTRA].name"
+                        ></omega-product-name-translation>
+                    </mat-select-trigger>
+                    <mat-option value=""></mat-option>
+                    <mat-option *ngFor="let extra of extras" [value]="extra" class="multiline-mat-option">
+                        <p class="select-value">
+                            <omega-product-name-translation [key]="extra.name"></omega-product-name-translation>
+                        </p>
+                        <p class="price">
+                            {{ extra.price }}
+                            <span i18n>PLN</span>
+                        </p>
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label i18n>Amount</mat-label>
+                <input (keypress)="validateNumericOnly($event)" [formControlName]="MakeAnOrderFormControl.AMOUNT" type="number" matInput>
+                <mat-error *ngIf="extrasFormControl?.get(MakeAnOrderFormControl.AMOUNT)?.errors?.['maxlength']">
+                    <ng-container i18n>Value is too long. Maximum length:</ng-container>
+                    {{ extrasFormControl?.get(MakeAnOrderFormControl.AMOUNT)?.errors?.['maxlength']?.requiredLength }}.
+                </mat-error>
+                <mat-error *ngIf="extrasFormControl?.get(MakeAnOrderFormControl.AMOUNT)?.errors?.['required']" i18n>This field is required.</mat-error>
+                <mat-error *ngIf="extrasFormControl?.get(MakeAnOrderFormControl.AMOUNT)?.errors?.['pattern']" i18n>Amount has to be a number greater than 0.</mat-error>
+            </mat-form-field>
+
+            <div class="action-buttons-container">
+                <button
+                    *ngIf="extrasFormArray?.length < extras.length"
+                    (click)="addProduct(MakeAnOrderFormArray.EXTRAS, $event)"
+                    [disabled]="isFormDisabled"
+                    color="primary"
+                    mat-mini-fab
+                >
+                    <mat-icon fontIcon="add"></mat-icon>
+                </button>
+                <button
+                    *ngIf="extrasFormArray?.length > 1"
+                    (click)="removeProduct(MakeAnOrderFormArray.EXTRAS, index, $event)"
+                    [disabled]="isFormDisabled"
+                    color="primary"
+                    mat-mini-fab
+                >
+                    <mat-icon fontIcon="remove"></mat-icon>
+                </button>
+            </div>
+        </div>
+    </section>
+</form>
+
+<section class="section">
+    <h2>
+        <ng-container i18n>Total price:</ng-container>
+        <span class="price">
+            {{ totalPrice }}
+            <ng-container i18n>PLN</ng-container>
+        </span>
+    </h2>
+</section>
+
+<button
+    (click)="saveOrder()"
+    [disabled]="isFormDisabled"
+    class="save-order-button"
+    color="primary"
+    mat-raised-button
+>
+    <ng-container i18n>Save your order</ng-container>
+</button>

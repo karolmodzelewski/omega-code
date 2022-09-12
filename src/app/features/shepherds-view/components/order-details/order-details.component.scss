@@ -1,0 +1,91 @@
+@use 'src/assets/styles/colors' as *;
+
+::ng-deep {
+    .order-details-panel-class {
+        .mat-dialog-container {
+            width: 768px;
+        }
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-close, .section-heading, .total-price {
+    color: $color-black;
+}
+
+.icon-close {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color: $color-black;
+    cursor: pointer;
+}
+
+.popup-heading, .section-heading, .details-name {
+    font-weight: 500;
+}
+
+.popup-heading {
+    font-size: 26px;
+    text-align: center;
+}
+
+.main {
+    margin: 30px 5px 0;
+    padding: 25px;
+    background: $color-dark-white;
+    border-radius: 8px;
+}
+
+.section:nth-of-type(n + 2),  .specific-order:nth-of-type(n + 1) {
+    margin-top: 20px;
+}
+
+.section {
+    &:not(:last-of-type) {
+        border-bottom: 3px solid $color-white;
+    }
+
+    .paragraph:last-of-type {
+        margin-bottom: 20px;
+    }
+}
+
+.section-heading, .total-price {
+    font-size: 18px;
+}
+
+.paragraph {
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+
+.specific-order:nth-of-type(n + 1) {
+    border-bottom: 1px solid $color-white;
+}
+
+.total-price {
+    text-align: right;
+}
+
+.price {
+    color: $color-green;
+}
+
+@media screen and (max-width: 768px) {
+    ::ng-deep {
+        .order-details-panel-class {
+            max-width: 100vw !important;
+            height: 100vh;
+
+            .mat-dialog-container {
+                width: 100vw;
+                border-radius: 0 !important;
+            }
+        }
+    }
+}

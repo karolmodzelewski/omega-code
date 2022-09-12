@@ -1,0 +1,46 @@
+<ng-container *ngIf="viewState === ViewState.SUCCESS">
+    <omega-filters
+        (filtersEmitter)="getOrders($event)"
+        [orders]="orders"
+    ></omega-filters>
+
+    <mat-table [dataSource]="orders">
+        <ng-container [matColumnDef]="DisplayedColumn.CUSTOMER">
+            <mat-header-cell *matHeaderCellDef class="header-cell" mat-header-cell i18n>Customer:</mat-header-cell>
+            <mat-cell *matCellDef="let order" mat-cell>
+                <p class="ellipsis">{{ order.customer.name }} {{ order.customer.surname }}</p>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container [matColumnDef]="DisplayedColumn.CITY">
+            <mat-header-cell *matHeaderCellDef mat-header-cell i18n>City:</mat-header-cell>
+            <mat-cell *matCellDef="let order" mat-cell>
+                <p class="ellipsis">{{ order.customer.city }}</p>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container [matColumnDef]="DisplayedColumn.AMOUNT">
+            <mat-header-cell *matHeaderCellDef class="header-cell" mat-header-cell i18n>Ordered products:</mat-header-cell>
+            <mat-cell *matCellDef="let order" mat-cell>
+                <p class="ellipsis">{{ order.totalAmount }}</p>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container [matColumnDef]="DisplayedColumn.DETAILS">
+            <mat-header-cell *matHeaderCellDef mat-header-cell></mat-header-cell>
+            <mat-cell *matCellDef="let order" (click)="showOrderDetails(order)" mat-cell>
+                <button color="primary" mat-raised-button i18n>Show details</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns" mat-header-row></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns" mat-row></mat-row>
+    </mat-table>
+
+    <div *ngIf="!orders.length" class="no-data-container">
+        <p class="no-data-found" i18n>No data found.</p>
+    </div>
+</ng-container>
+
+<omega-loading-state *ngIf="viewState === ViewState.LOADING"></omega-loading-state>
+<omega-error-state *ngIf="viewState === ViewState.ERROR"></omega-error-state>
