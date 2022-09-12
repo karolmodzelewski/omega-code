@@ -10,19 +10,19 @@
             <h3 class="section-heading" i18n>Customer details:</h3>
             <p class="paragraph">
                 <span class="details-name" i18n>Full name:</span>
-                {{ clientsOrder.customer.name }} {{ clientsOrder.customer.surname }}
+                {{ clientsOrder?.customer?.name }} {{ clientsOrder?.customer?.surname }}
             </p>
             <p class="paragraph">
                 <span class="details-name" i18n>City:</span>
-                {{ clientsOrder.customer.city }}
+                {{ clientsOrder?.customer?.city }}
             </p>
             <p class="paragraph">
                 <span class="details-name" i18n>Address:</span>
-                {{ clientsOrder.customer.street }} {{ clientsOrder.customer.houseNumber }} {{ clientsOrder.customer?.flatNumber }}
+                {{ clientsOrder?.customer?.street }} {{ clientsOrder?.customer?.houseNumber }} {{ clientsOrder?.customer?.flatNumber }}
             </p>
             <p class="paragraph">
                 <span class="details-name" i18n>Postal code:</span>
-                {{ clientsOrder.customer.postalCode }}
+                {{ clientsOrder?.customer?.postalCode }}
             </p>
         </section>
         <section class="section">
@@ -31,26 +31,26 @@
                 <p class="paragraph">
                     <span class="details-name" i18n>Name:</span>
                     &ngsp;
-                    <omega-product-name-translation [key]="order.name"></omega-product-name-translation>
+                    <omega-product-name-translation [key]="order?.name"></omega-product-name-translation>
                 </p>
                 <p *ngIf="order.type" class="paragraph">
                     <span class="details-name" i18n>Type:</span>
                     &ngsp;
-                    <omega-oscypek-type-translation [key]="order.type"></omega-oscypek-type-translation>
+                    <omega-oscypek-type-translation [key]="order?.type"></omega-oscypek-type-translation>
                 </p>
                 <p *ngIf="order.size" class="paragraph">
                     <span class="details-name" i18n>Size:</span>
                     &ngsp;
-                    <omega-oscypek-size-translation [key]="order.size"></omega-oscypek-size-translation>
+                    <omega-oscypek-size-translation [key]="order?.size"></omega-oscypek-size-translation>
                 </p>
                 <p class="paragraph">
                     <span class="details-name" i18n>Amount:</span>
-                    {{ order.amount }}
+                    {{ order?.amount }}
                 </p>
                 <p class="paragraph">
                     <span class="details-name" i18n>Price:</span>
                     <span class="price">
-                        {{ order.price }}
+                        {{ order?.price }}
                         <ng-container i18n>PLN</ng-container>
                     </span>
                 </p>
@@ -60,7 +60,7 @@
             <p class="total-price">
                 <ng-container i18n>Total price:</ng-container>
                 <span class="price">
-                    {{ clientsOrder.totalPrice }}
+                    {{ clientsOrder?.totalPrice }}
                     <ng-container i18n>PLN</ng-container>
                 </span>
             </p>

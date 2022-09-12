@@ -4,7 +4,7 @@
     <section [formArrayName]="MakeAnOrderFormGroup.CUSTOMER" class="section">
         <h2 i18n>Your details:</h2>
         <div class="form-group-container">
-            <mat-form-field *ngFor="let customerDetail of customerFormGroup.controls | keyvalue: iterateByOriginalOrder">
+            <mat-form-field *ngFor="let customerDetail of customerFormGroup?.controls | keyvalue: iterateByOriginalOrder">
                 <mat-label>
                     <omega-customer-detail-translation [key]="customerDetail.key"></omega-customer-detail-translation>
                 </mat-label>
@@ -21,7 +21,7 @@
     <section [formArrayName]="MakeAnOrderFormArray.OSCYPEKS" class="section">
         <h2 i18n>Oscypeks:</h2>
         <div
-            *ngFor="let oscypeksFormControl of oscypeksFormArray.controls; index as index; first as first; last as last"
+            *ngFor="let oscypeksFormControl of oscypeksFormArray?.controls; index as index; first as first; last as last"
             [formGroupName]="index"
             class="form-group-container"
         >
@@ -102,7 +102,7 @@
 
             <div class="action-buttons-container">
                 <button
-                    *ngIf="oscypeksFormArray.length < oscypeks.length"
+                    *ngIf="oscypeksFormArray?.length < oscypeks.length"
                     (click)="addProduct(MakeAnOrderFormArray.OSCYPEKS, $event)"
                     [disabled]="isFormDisabled"
                     color="primary"
@@ -111,7 +111,7 @@
                     <mat-icon fontIcon="add"></mat-icon>
                 </button>
                 <button
-                    *ngIf="oscypeksFormArray.length > 1"
+                    *ngIf="oscypeksFormArray?.length > 1"
                     (click)="removeProduct(MakeAnOrderFormArray.OSCYPEKS, index, $event)"
                     [disabled]="isFormDisabled"
                     color="primary"
@@ -126,7 +126,7 @@
     <section [formArrayName]="MakeAnOrderFormArray.EXTRAS" class="section">
         <h2 i18n>Extras:</h2>
         <div
-            *ngFor="let extrasFormControl of extrasFormArray.controls; index as index; first as first; last as last"
+            *ngFor="let extrasFormControl of extrasFormArray?.controls; index as index; first as first; last as last"
             [formGroupName]="index"
             class="form-group-container"
         >
@@ -165,7 +165,7 @@
 
             <div class="action-buttons-container">
                 <button
-                    *ngIf="extrasFormArray.length < extras.length"
+                    *ngIf="extrasFormArray?.length < extras.length"
                     (click)="addProduct(MakeAnOrderFormArray.EXTRAS, $event)"
                     [disabled]="isFormDisabled"
                     color="primary"
@@ -174,7 +174,7 @@
                     <mat-icon fontIcon="add"></mat-icon>
                 </button>
                 <button
-                    *ngIf="extrasFormArray.length > 1"
+                    *ngIf="extrasFormArray?.length > 1"
                     (click)="removeProduct(MakeAnOrderFormArray.EXTRAS, index, $event)"
                     [disabled]="isFormDisabled"
                     color="primary"
