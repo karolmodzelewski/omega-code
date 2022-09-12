@@ -59,19 +59,19 @@ export class ListOfOrdersComponent extends Destroyable implements OnInit {
     }
 
     private getFilteredOrders(orders: Orders[], orderFilters: OrderFilters): Orders[] {
-        const filteredOrders: Orders[] = orders.filter((orders: Orders) => {
+        const filteredOrders: Orders[] = orders.filter((filteredOrder: Orders) => {
             let result: boolean = true;
 
             if (orderFilters?.city) {
-                result = result && orders.customer.city.toLowerCase().includes(orderFilters?.city.toLowerCase());
+                result = result && filteredOrder.customer.city.toLowerCase().includes(orderFilters?.city.toLowerCase());
             }
 
             if (orderFilters?.oscypekType) {
-                result = result && orders.order.some((order: Order) => order.type === orderFilters?.oscypekType);
+                result = result && filteredOrder.order.some((order: Order) => order.type === orderFilters?.oscypekType);
             }
 
             if (orderFilters?.oscypekSize) {
-                result = result && orders.order.some((order: Order) => order.size === orderFilters?.oscypekSize);
+                result = result && filteredOrder.order.some((order: Order) => order.size === orderFilters?.oscypekSize);
             }
 
             return result;

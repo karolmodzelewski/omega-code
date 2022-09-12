@@ -8,7 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 import { ClientsViewComponent } from './clients-view.component';
-import { BackToDashboardButtonComponent } from 'src/app/components/back-to-dashboard-button/back-to-dashboard-button.component';
+import { BackToDashboardButtonComponent } from '../../components/back-to-dashboard-button/back-to-dashboard-button.component';
 import { ClientsViewRoutingModule } from './clients-view-routing.module';
 import { MakeAnOrderComponent } from './components/make-an-order/make-an-order.component';
 import { SummaryComponent } from './components/summary/summary.component';
