@@ -4,10 +4,10 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start:en": "ng serve --configuration en-US --port=4201",
-        "start:pl": "ng serve --configuration pl --port=4202",
+        "start:en": "ng serve --configuration=en-US --port=4201",
+        "start:pl": "ng serve --configuration=pl --port=4202",
         "build": "ng build",
-        "watch": "ng build --watch --configuration development",
+        "watch": "ng build --watch --configuration=development",
         "test": "ng test",
         "i18n:extract": "ng extract-i18n --output-path src/locales --format=json",
         "lint": "ng lint",
