@@ -60,6 +60,10 @@ export class MakeAnOrderFormService {
         });
     }
 
+    public resetSummary(): void {
+        this.preparedOrders$.next(null);
+    }
+
     private buildCustomerFormGroup(): FormGroup {
         return this.formBuilder.group({
             [MakeAnOrderFormControl.NAME]: ['', [Validators.required, Validators.maxLength(50)]],
@@ -70,10 +74,6 @@ export class MakeAnOrderFormService {
             [MakeAnOrderFormControl.HOUSE_NUMBER]: ['', [Validators.required, Validators.maxLength(10)]],
             [MakeAnOrderFormControl.FLAT_NUMBER]: ['', Validators.maxLength(10)],
         });
-    }
-
-    public resetSummary(): void {
-        this.preparedOrders$.next(null);
     }
 
     private prepareCustomerData() {
