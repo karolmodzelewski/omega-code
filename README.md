@@ -37,10 +37,10 @@
 
 ### Helpful commands
 
-`npm run test` - run all tests
-`npm run i18n:extract` - creates new translations and updates `messages.json` file
-`npm run lint` - lint application basen on `.eslintrc.json` configuration file 
-`npm run lint:fix` - lint application and automatically fixes errors and warnings (if it's supported by specific rules)
+- `npm run test` - run all tests
+- `npm run i18n:extract` - creates new translations and updates `messages.json` file
+- `npm run lint` - lint application basen on `.eslintrc.json` configuration file 
+- `npm run lint:fix` - lint application and automatically fixes errors and warnings (if it's supported by specific rules)
 
 ## Tools and technologies
 
