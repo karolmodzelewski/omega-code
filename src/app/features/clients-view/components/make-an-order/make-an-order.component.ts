@@ -34,19 +34,19 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
     public totalAmount: number = 0;
 
     public get customerFormGroup(): FormGroup {
-        return this.form.get(MakeAnOrderFormGroup.CUSTOMER) as FormGroup;
+        return this.form?.get(MakeAnOrderFormGroup.CUSTOMER) as FormGroup;
     }
 
     public get oscypeksFormArray(): FormArray {
-        return this.form.get(MakeAnOrderFormArray.OSCYPEKS) as FormArray;
+        return this.form?.get(MakeAnOrderFormArray.OSCYPEKS) as FormArray;
     }
 
     public get extrasFormArray(): FormArray {
-        return this.form.get(MakeAnOrderFormArray.EXTRAS) as FormArray;
+        return this.form?.get(MakeAnOrderFormArray.EXTRAS) as FormArray;
     }
 
     public get isFormDisabled(): boolean {
-        return this.form.disabled;
+        return this.form?.disabled;
     }
 
     constructor(private makeAnOrderFormService: MakeAnOrderFormService) {
@@ -112,6 +112,10 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
     }
 
     private getProductsData(): void {
+        if (!this.products) {
+            return;
+        }
+
         const [ oscypeks, types, sizes, extras ] = this.products;
 
         this.oscypeks = oscypeks;
@@ -121,9 +125,13 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
     }
 
     private getTotalPriceAndAmount(): void {
+        if (!this.oscypeksFormArray || !this.extrasFormArray) {
+            return;
+        }
+
         combineLatest([
-            this.oscypeksFormArray.valueChanges.pipe(startWith([])),
-            this.extrasFormArray.valueChanges.pipe(startWith([])),
+            this.oscypeksFormArray?.valueChanges.pipe(startWith([])),
+            this.extrasFormArray?.valueChanges.pipe(startWith([])),
         ])
             .pipe(takeUntil(this.destroyed$))
             .subscribe((products: [Oscypek[], Extra[]]) => this.countTotalPriceAndAmount(products));
