@@ -56,6 +56,10 @@
     margin: 30px 0;
 }
 
+.hidden {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     .form-group-container {
         margin-bottom: 40px;

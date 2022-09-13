@@ -27,12 +27,15 @@
         >
             <mat-form-field>
                 <mat-label i18n>Oscypek</mat-label>
-                <mat-select [formControlName]="MakeAnOrderFormControl.OSCYPEK">
+                <mat-select [formControlName]="MakeAnOrderFormControl.OSCYPEK" [compareWith]="compare">
                     <mat-select-trigger>
-                        {{ oscypeksFormControl.value[MakeAnOrderFormControl.OSCYPEK].name ?? '' }}
+                        <omega-product-name-translation
+                            *ngIf="oscypeksFormControl.value[MakeAnOrderFormControl.OSCYPEK].name"
+                            [key]="oscypeksFormControl.value[MakeAnOrderFormControl.OSCYPEK].name"
+                        ></omega-product-name-translation>
                     </mat-select-trigger>
-                    <mat-option value=""></mat-option>
-                    <mat-option *ngFor="let oscypek of oscypeks" [value]="oscypek" class="multiline-mat-option">
+                    <mat-option class="hidden" value=""></mat-option>
+                    <mat-option *ngFor="let oscypek of filteredOscypeks" [value]="oscypek" class="multiline-mat-option">
                         <p class="select-value">{{ oscypek.name }}</p>
                         <p class="price">
                             {{ oscypek.price }}
@@ -132,15 +135,15 @@
         >
             <mat-form-field>
                 <mat-label i18n>Extra</mat-label>
-                <mat-select [formControlName]="MakeAnOrderFormControl.EXTRA">
+                <mat-select [formControlName]="MakeAnOrderFormControl.EXTRA" [compareWith]="compare">
                     <mat-select-trigger>
                         <omega-product-name-translation
                             *ngIf="extrasFormControl.value[MakeAnOrderFormControl.EXTRA].name"
                             [key]="extrasFormControl.value[MakeAnOrderFormControl.EXTRA].name"
                         ></omega-product-name-translation>
                     </mat-select-trigger>
-                    <mat-option value=""></mat-option>
-                    <mat-option *ngFor="let extra of extras" [value]="extra" class="multiline-mat-option">
+                    <mat-option class="hidden" value=""></mat-option>
+                    <mat-option *ngFor="let extra of filteredExtras" [value]="extra" class="multiline-mat-option">
                         <p class="select-value">
                             <omega-product-name-translation [key]="extra.name"></omega-product-name-translation>
                         </p>
