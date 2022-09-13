@@ -26,6 +26,8 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
     public MakeAnOrderFormControl: typeof MakeAnOrderFormControl = MakeAnOrderFormControl;
     public MakeAnOrderFormGroup: typeof MakeAnOrderFormGroup = MakeAnOrderFormGroup;
     public MakeAnOrderFormArray: typeof MakeAnOrderFormArray = MakeAnOrderFormArray;
+    public filteredExtras: Product[] = [];
+    public filteredOscypeks: Product[] = [];
     public extras: Product[] = [];
     public oscypeks: Product[] = [];
     public types: Product[] = [];
@@ -103,6 +105,7 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
     }
 
     public iterateByOriginalOrder = (): number => 0;
+    public compare = (): boolean => true;
 
     private prepareDataToSend(): void {
         this.form.get(MakeAnOrderFormControl.TOTAL_PRICE).setValue(this.totalPrice);
@@ -122,6 +125,8 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
         this.types = types;
         this.sizes = sizes;
         this.extras = extras;
+        this.filteredExtras = extras;
+        this.filteredOscypeks = oscypeks;
     }
 
     private getTotalPriceAndAmount(): void {
@@ -134,11 +139,15 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
             this.extrasFormArray?.valueChanges.pipe(startWith([])),
         ])
             .pipe(takeUntil(this.destroyed$))
-            .subscribe((products: [Oscypek[], Extra[]]) => this.countTotalPriceAndAmount(products));
+            .subscribe((products: [Oscypek[], Extra[]]) => {
+                const [ oscypeks, extras ] = products;
+
+                this.getFilteredData(oscypeks, extras);
+                this.countTotalPriceAndAmount(oscypeks, extras);
+            });
     }
 
-    private countTotalPriceAndAmount(products: [Oscypek[], Extra[]]): void {
-        const [ oscypeks, extras ] = products;
+    private countTotalPriceAndAmount(oscypeks: Oscypek[], extras: Extra[]): void {
         let oscypeksPrice: number = 0;
         let oscypeksAmount: number = 0;
         let extrasPrice: number = 0;
@@ -156,6 +165,11 @@ export class MakeAnOrderComponent extends Destroyable implements OnInit {
 
         this.totalPrice = oscypeksPrice += extrasPrice;
         this.totalAmount = oscypeksAmount += extrasAmount;
+    }
+
+    private getFilteredData(oscypeks: Oscypek[], extras: Extra[]): void {
+        this.filteredOscypeks = this.oscypeks.filter((product: Product) => !oscypeks.some((oscypek: Oscypek) => product.name === oscypek[MakeAnOrderFormControl.OSCYPEK].name));
+        this.filteredExtras = this.extras.filter((product: Product) => !extras.some((extra: Extra) => product.name === extra[MakeAnOrderFormControl.EXTRA].name));
     }
 
     private countOscypeksPrice(oscypeks: Oscypek[]): number {
