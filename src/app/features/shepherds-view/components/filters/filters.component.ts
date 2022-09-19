@@ -46,8 +46,8 @@ export class FiltersComponent extends Destroyable implements OnInit {
     }
 
     private initFiltersListener(): void {
-        const city$: Observable<OscypekSize> = this.getFormControlValue$(OrderFilterFormControl.CITY, 600);
-        const oscypekType$: Observable<OscypekSize> = this.getFormControlValue$(OrderFilterFormControl.OSCYPEK_TYPE, 300);
+        const city$: Observable<string> = this.getFormControlValue$(OrderFilterFormControl.CITY, 600);
+        const oscypekType$: Observable<OscypekType> = this.getFormControlValue$(OrderFilterFormControl.OSCYPEK_TYPE, 300);
         const oscypekSize$: Observable<OscypekSize> = this.getFormControlValue$(OrderFilterFormControl.OSCYPEK_SIZE, 300);
 
         combineLatest([city$, oscypekType$, oscypekSize$])
